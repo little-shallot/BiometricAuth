@@ -1,0 +1,54 @@
+{
+  "id": "BiometricAuth",
+  "name": "生物识别登录",
+  "version": "1.0.0",
+  "description": "指纹/FaceID 身份验证插件",
+  "_dp_type": "nativeplugin",
+  "_dp_nativeplugin": {
+    "android": {
+      "plugins": [
+        {
+          "type": "module",
+          "name": "BiometricAuth",
+          "class": "com.yourcompany.biometric.BiometricPlugin"
+        }
+      ],
+      "abis": [
+        "armeabi-v7a",
+        "arm64-v8a",
+        "x86_64"
+      ],
+      "minSdkVersion": 23,
+      "integrateType": "aar",
+      "dependencies": [
+        "androidx.biometric:biometric:1.1.0",
+        "androidx.fragment:fragment:1.6.2"
+      ],
+      "compileOptions": {
+        "sourceCompatibility": "1.8",
+        "targetCompatibility": "1.8"
+      },
+      "permissions": [
+        "android.permission.USE_BIOMETRIC",
+        "android.permission.USE_FINGERPRINT"
+      ]
+    },
+    "ios": {
+      "integrateType": "framework",
+      "plugins": [
+        {
+          "type": "module",
+          "name": "BiometricAuth",
+          "class": "BiometricPlugin"
+        }
+      ],
+      "frameworks": [
+        "LocalAuthentication.framework"
+      ],
+      "deploymentTarget": "11.0",
+      "plist": {
+        "NSFaceIDUsageDescription": "需要使用面容ID进行身份验证"
+      }
+    }
+  }
+}
